@@ -6,6 +6,7 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="output.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -17,93 +18,113 @@
 
     <main class="flex flex-col justify-center items-center mb-16">
 
-        <div class="flex flex-row justify-between items-center w-2/4">
+        <div class="flex md:flex-row flex-col justify-between items-center gap-8 md:w-2/4 w-3/4">
             <h1 class="text-2xl">Create Account</h1>
-            <p class="flex flex-row font-medium hover:cursor-default">
+            <p class="flex md:flex-row flex-col text-center justify-center items-center font-medium hover:cursor-default">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg>
                 Secured by Alpha Security
             </p>
         </div>
+
         <hr class="w-2/4">
 
-
-    <section class=" flex flex-col justify-around rounded-lg w-2/4 mt-4">
-        <div class=" w-full flex flex-row justify-around items-center gap-2">
-           <h1 class="flex flex-col my-8 font-medium w-full">
-            First Name*
-            <input class="my-2 p-3 border w-full rounded-lg" type="text" name="fname" id="fname" placeholder="e.g. John">
+    <form id="accountForm" class=" flex flex-col justify-around rounded-lg md:w-2/4 w-3/4 md:mt-4 mt-8">
+        <div class=" w-full flex md:flex-row flex-col justify-around items-center gap-2">
+           <h1 class="flex flex-col md:my-8 my-2  font-medium w-full">
+            <label for="fname">First Name*</label>
+            <input id="fname" class="my-2 p-3 border-b-2 w-full focus:outline-0 focus:border-b-blue-600" type="text" name="fname" id="fname" placeholder="e.g. John" required>
            </h1>
-           <h1 class="flex flex-col my-8 font-medium w-full">
-            Last Name*
-            <input class="my-2 p-3 border w-full rounded-lg" type="text" name="lname" id="lname" placeholder="e.g. Doe">
+           <h1 class="flex flex-col md:my-8 my-2  font-medium w-full">
+            <label for="lname">Last Name*</label>
+            <input id="lname" class="my-2 p-3 border-b-2 w-full focus:outline-0 focus:border-b-blue-600" type="text" name="lname" id="lname" placeholder="e.g. Doe" required>
            </h1>
         </div>
 
-        <div class=" w-full flex flex-row justify-around items-center gap-2">
+        <div class=" w-full flex md:flex-row flex-col justify-around items-center mt-4 md:gap-2 gap-8">
             <h1 class="flex flex-col font-medium w-full">
-                DOB
-                <input class="border my-2 p-3 rounded-lg" type="date" name="dob" id="dob">
+                <label for="DOB">DOB*</label>
+                <input class="my-2 p-3 border-b-2 w-full focus:outline-0 focus:border-b-blue-600" type="date" name="dob" id="dob" required>
             </h1>
             <h1 class="flex flex-col font-medium w-full">
-                Phone No.
-                <input class="border my-2 p-3 rounded-lg w-full" type="tel" name="phnumber" id="phnumber">
+                <label for="phno">Phone No.*</label>
+                <input class="my-2 p-3 border-b-2 w-full focus:outline-0 focus:border-b-blue-600" type="tel" name="phnumber" id="phnumber" placeholder="03xx-xxxxxxx" required>
             </h1>
         </div>
 
-        <div class="mt-8 w-full flex flex-col justify-around items-center font-medium">
-            <div class=" w-full">
+        <div class="mt-8 w-full flex md:flex-col flex-col justify-around items-center font-medium">
+            <div class="w-full">
                 <h1>Gender*</h1>
             </div>
-            <div class=" mt-2 flex flex-row justify-between w-full">
-                <h1 class="border p-3 rounded-lg flex flex-row justify-center items-center font-medium ">
+            <div class=" mt-2 flex md:flex-row justify-between w-full gap-2">
+                <label class="outline-0  md:border-b-2 p-3  flex flex-row justify-center items-center font-medium  " >
                     Male
-                    <input class="mt-1 mx-4" type="radio" name="radio" id="radio">
-                </h1>
-                <h1 class="border p-3 rounded-lg flex flex-row justify-center items-center font-medium ">
+                    <input class="mt-1 mx-4 accent-blue-600 hover:cursor-pointer" type="radio" name="radio" id="radio">
+                </label>
+                <h1 class="outline-0 md:border-b-2 p-3 flex flex-row justify-center items-center font-medium ">
                     Female
-                    <input class="mt-1 mx-4" type="radio" name="radio" id="radio">
+                    <input class="mt-1 mx-4 accent-blue-600 hover:cursor-pointer" type="radio" name="radio" id="radio">
                 </h1>
-                <h1 class="border p-3 rounded-lg flex flex-row justify-center items-center font-medium ">
+                <h1 class="outline-0 md:border-b-2 p-3 flex flex-row justify-center items-center font-medium ">
                     Other
-                    <input class="mt-1 mx-4" type="radio" name="radio" id="radio">
+                    <input class="mt-1 mx-4 accent-blue-600 hover:cursor-pointer" type="radio" name="radio" id="radio">
                 </h1> 
             </div>
         </div>
 
         <div class="mt-8">
             <h1 class=" font-medium">
-                Email*
-                <input class="border w-full my-2 p-3 rounded-lg" type="email" name="mail" id="mail" placeholder="example@mail.com">
+                <label for="email">Email*</label>
+                <input id="email" class="my-2 p-3 border-b-2 w-full focus:outline-0 focus:border-b-blue-600" type="email" name="mail" id="mail" placeholder="example@mail.com" required>
             </h1>
         </div>
 
         <div class="mt-8">
             <h1 class=" font-medium">
-                Password*
-                <input class="border w-full my-2 p-3 rounded-lg" type="password" name="pass" id="pass" placeholder="***********">
+                <label for="password">Password*</label>
+                <input id="password" class="my-2 p-3 border-b-2 w-full focus:outline-0 focus:border-b-blue-600" type="password" name="pass" id="pass" placeholder="***********" required>
+                <p id="passwordError" class="error"></p>
             </h1>
             <h1 class="mt-8 font-medium">
-                Confirm Password*
-                <input class="border w-full my-2 p-3 rounded-lg" type="password" name="pass" id="pass" placeholder="***********">
+                <label for="confirmPassword">Confirm Password*</label>
+                <input id="confirmPassword" class="my-2 p-3 border-b-2 w-full focus:outline-0 focus:border-b-blue-600" type="password" name="pass" id="pass" placeholder="***********" required>
+                <p id="confirmError" class="error"></p>
             </h1>
         </div>
 
-        <div class="mt-8 flex flex-row ">
-            <input class="size-6" type="checkbox" name="check" id="check">
-            <h1 class="mx-4">I accept all the <a class="text-blue-500 hover:text-blue-700 hover:underline" href="#!">Terms & Conditions</a> & <a class="text-blue-500 hover:text-blue-700 hover:underline" href="#!">Privacy Policies</a></h1>
+        <div class="mt-8 flex flex-row justify-start items-start ">
+            <label for="checboxk"></label>
+            <input class=" md:size-6 size-8 accent-blue-600 hover:cursor-pointer" type="checkbox" name="check" id="check" required>
+            <h1 class=" mx-4">I accept all the <a class="text-blue-500 hover:text-blue-700 hover:underline" href="#!">Terms & Conditions</a> & <a class="text-blue-500 hover:text-blue-700 hover:underline" href="#!">Privacy Policies</a></h1>
         </div>
 
         <div class=" mt-8">
-            <input class=" w-full p-3 rounded-lg hover:cursor-pointer bg-blue-600 text-white hover:bg-blue-700 font-bold" type="button" value="Create Account">
+            <button id="createAccount" type="submit" class=" w-full p-3 rounded-lg hover:cursor-pointer bg-blue-600 text-white hover:bg-blue-700 font-bold">
+                Create Account
+            </button>
+            
         </div>
+
 
         <div class="text-center mt-8">
             <h1>Already have an account ? <a class="text-blue-600 hover:text-blue-700 hover:underline" href="#!">LOGIN</a></h1>
         </div>
 
-    </section>
+    </form>
 
-    </main>
+    <!-- Modal (hidden initially) -->
+    <div id="modal" class="fixed inset-0 hidden bg-black bg-opacity-50 items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-96 text-center">
+            <h2 class="text-2xl font-bold text-green-600">🎉 Account Created Successfully!</h2>
+            <p class="text-gray-700 mt-2">Your account has been created.</p>
+            <button id="closeModal" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Error message (hidden initially) -->
+    <p id="errorMessage" class="text-red-500 text-sm mb-3 hidden"></p>
+  </main>
 
 </body>
 </html>

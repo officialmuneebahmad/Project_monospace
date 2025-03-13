@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+.error { 
+    color: red; 
+    font-size: 14px; 
+}
+
+.success { 
+    color: green; 
+    font-size: 14px; 
+}
+
+.project-3-bg {
+    background-image: url(https://i.postimg.cc/Z5CHKTx1/nasa-Q1p7bh3-SHj8-unsplash.jpg);
+    background-size: cover;
+    height: fit-content;
+    width: 100%;
+    padding: 20% 0%;
+}
+
+.no-scrollbar {
+    scrollbar-width: none;  /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari */
+}
